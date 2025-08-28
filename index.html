@@ -1,17 +1,3 @@
-# Re-run build (kernel reset cleared state). Create files again and zip.
-from PIL import Image
-import os, zipfile, json
-
-project_dir = "/mnt/data/pixelup-site-fixed"
-assets_dir = os.path.join(project_dir, "assets")
-os.makedirs(assets_dir, exist_ok=True)
-
-# Save logo
-src_logo = "/mnt/data/fbe4868b-7e62-432d-9052-8aed952bcdfe.jfif"
-logo_webp = os.path.join(assets_dir, "pixelup-logo.webp")
-from PIL import Image
-with Image.open(src_logo) as im:
-    im.save(logo_webp, "WEBP", quality=92, method=6)
 
 index_html = """<!doctype html>
 <html lang="pt-BR">
