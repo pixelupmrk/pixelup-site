@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PixelUp • Tráfego Pago & Mídia Digital</title>
+  <meta name="description" content="Agência de tráfego pago e mídia digital. Cresça com anúncios que geram resultado, conteúdo que conecta e CRM que vende." />
+  <meta name="theme-color" content="#0ea5ff" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="PixelUp • Tráfego Pago & Mídia Digital" />
+  <meta property="og:description" content="Cresça com anúncios que geram resultado, conteúdo que conecta e CRM que vende." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixelup.site" />
+  <meta property="og:image" content="assets/pixelup-logo.webp" />
+
+  <!-- Icons -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230ea5ff' d='M8 8h48v10H18v38H8z'/%3E%3Cpath fill='%23fff' d='M26 26h30v30H26z'/%3E%3C/svg%3E" />
+
+  <!-- Remix Icons (leves e práticas) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Preload logo -->
+  <link rel="preload" as="image" href="assets/pixelup-logo.webp" />
+
+  <style>
+    :root{
+      --bg:#050811; --bg-soft:#0a1222; --txt:#eaf2ff; --muted:#a7b5d1;
+      --brand:#0ea5ff; --brand-2:#6ee7ff; --ok:#22c55e; --warn:#f59e0b; --danger:#ef4444;
+      --radius:16px; --shadow:0 10px 30px rgba(14,165,255,.2);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{width:min(1200px,92vw);margin-inline:auto}
+    header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(180deg,rgba(5,8,17,.9),rgba(5,8,17,.6));border-bottom:1px solid rgba(110,231,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .logo{width:28px;height:28px;border-radius:8px;background:radial-gradient(60% 60% at 50% 50%,var(--brand),var(--brand-2));box-shadow:0 0 30px rgba(110,231,255,.45)}
+    .logoimg{height:28px;width:auto;display:block;filter:drop-shadow(0 0 12px rgba(110,231,255,.35))}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{color:var(--txt);opacity:.85}
+    .cta{padding:10px 16px;border-radius:999px;background:linear-gradient(90deg,var(--brand),#3cc8ff);color:#001425;font-weight:700;box-shadow:var(--shadow)}
+
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-30%;background:radial-gradient(60% 40% at 50% 10%, rgba(14,165,255,.3), transparent 60%),radial-gradient(40% 30% at 80% 0%, rgba(110,231,255,.18), transparent 70%);filter:blur(40px);z-index:-1}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 0}
+    .kicker{color:var(--brand-2);text-transform:uppercase;font-size:.85rem;letter-spacing:.18em}
+    h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:10px 0 14px}
+    .sub{color:var(--muted);font-size:1.08rem}
+    .pills{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 28px}
+    .pill{border:1px solid rgba(110,231,255,.18);border-radius:999px;padding:8px 12px;color:var(--brand-2);font-size:.9rem;background:rgba(10,18,34,.7)}
+    .heroCard{background:linear-gradient(180deg,#0b1326,#0a1222);border:1px solid rgba(110,231,255,.14);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .stat{display:flex;align-items:center;gap:10px}
+    .stat i{font-size:22px;color:var(--ok)}
+
+    section{padding:68px 0;border-top:1px solid rgba(110,231,255,.06)}
+    .title{font-size:1.9rem;margin:0 0 10px}
+    .lead{color:var(--muted);margin:0 0 26px}
+    .grid{display:grid;gap:18px}
+
+    .card{background:linear-gradient(180deg,#0a1326,#0b152a);border:1px solid rgba(110,231,255,.14);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .icon{width:38px;height:38px;border-radius:10px;background:rgba(14,165,255,.15);display:grid;place-items:center;margin-bottom:10px}
+
+    .services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .cases{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .case{display:flex;flex-direction:column;gap:10px}
+    .tag{font-size:.8rem;color:var(--brand-2)}
+    .testis{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .quote{font-style:italic;color:var(--muted)}
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+    form{display:grid;gap:12px}
+    input,textarea{background:#0a1326;border:1px solid rgba(110,231,255,.16);border-radius:12px;padding:12px 14px;color:var(--txt)}
+    textarea{min-height:120px;resize:vertical}
+    .inline{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{cursor:pointer;border:0}
+    footer{padding:40px 0;color:var(--muted)}
+    .floatWA{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:28px;box-shadow:0 12px 30px rgba(0,0,0,.3);z-index:50}
+    @media (max-width: 860px){
+      .hero .wrap{grid-template-columns:1fr;gap:24px;padding:54px 0}
+      .about{grid-template-columns:1fr}
+      .menu{display:none}
+      .menu.open{display:flex;flex-direction:column;gap:14px;position:absolute;left:0;right:0;top:60px;background:rgba(5,8,17,.96);padding:16px;border-top:1px solid rgba(110,231,255,.08)}
+      .hamb{display:inline-flex}
+    }
+    .hamb{display:none;align-items:center;gap:6px;background:#0b1428;border:1px solid rgba(110,231,255,.18);padding:8px 12px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="logoimg" src="assets/pixelup-logo.webp" alt="PixelUp Marketing Digital" onerror="this.style.display='none';var f=this.parentElement.querySelector('.logo-fallback');if(f)f.style.display='inline-block';" />
+        <span class="logo logo-fallback" aria-hidden="true" style="display:none"></span>
+        <span>PixelUp</span>
+      </div>
+      <nav class="menu" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#cases">Cases</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a class="cta" href="https://wa.me/5547988968000" target="_blank" rel="noopener">Fale no WhatsApp</a>
+      </nav>
+      <button class="hamb" id="hamb"><i class="ri-menu-line"></i> Menu</button>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="container wrap">
+      <div>
+        <div class="kicker">Tráfego Pago • Conteúdo • CRM • Vendas</div>
+        <h1>Resultados previsíveis com mídia que vende de verdade.</h1>
+        <p class="sub">Nós planejamos, criamos e otimizamos todo o seu funil: anúncios, criativos, páginas e CRM — para você vender mais em menos tempo.</p>
+        <div class="pills">
+          <span class="pill"><i class="ri-flashlight-fill"></i> Lançamento em dias</span>
+          <span class="pill"><i class="ri-bar-chart-2-fill"></i> Relatórios claros</span>
+          <span class="pill"><i class="ri-robot-2-fill"></i> IA no seu favor</span>
+        </div>
+        <div class="inline">
+          <a class="cta" href="#servicos">Ver serviços</a>
+          <a class="cta" style="background:linear-gradient(90deg,#22c55e,#86efac)" href="https://wa.me/5547988968000" target="_blank" rel="noopener">Quero um orçamento</a>
+        </div>
+      </div>
+      <div>
+        <div class="heroCard">
+          <div class="stat"><i class="ri-checkbox-circle-fill"></i> Plano sob medida para lojas de veículos</div>
+          <hr style="border-color:rgba(110,231,255,.12)" />
+          <div class="stat"><i class="ri-rocket-2-fill" style="color:var(--brand)"></i> Creative Lab estilo PixelUp (azul neon)</div>
+          <hr style="border-color:rgba(110,231,255,.12)" />
+          <div class="stat"><i class="ri-magic-fill" style="color:var(--warn)"></i> Copys e automações prontas</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="servicos">
+    <div class="container">
+      <h2 class="title">Serviços</h2>
+      <p class="lead">Escolha o pacote ideal ou monte um sob medida. Sempre com foco em performance e marca.</p>
+      <div class="grid services">
+        <div class="card">
+          <div class="icon"><i class="ri-bullseye-line"></i></div>
+          <h3>Tráfego Pago</h3>
+          <p>Gestão completa de Meta Ads e Google Ads: estrutura, criativos, testes A/B, otimização diária e relatórios enxutos.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="ri-video-add-line"></i></div>
+          <h3>Conteúdo & Vídeo</h3>
+          <p>Pacotes de vídeos curtos, carrosséis e imagens em estilo neon PixelUp que geram atenção e reforçam autoridade.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="ri-customer-service-2-line"></i></div>
+          <h3>CRM & SDR</h3>
+          <p>Implementação de CRM, scripts de atendimento, funis e automações para vender todos os dias.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="ri-store-2-line"></i></div>
+          <h3>Pacote Concessionária</h3>
+          <p>Plano focado em lojas de veículos: anúncios por estoque, criativos de vitrines e captação de leads qualificados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="container">
+      <h2 class="title">Cases</h2>
+      <p class="lead">Alguns resultados que temos orgulho em compartilhar.</p>
+      <div class="grid cases">
+        <article class="card case">
+          <span class="tag">M2 Multimarcas</span>
+          <h3>+172% de leads em 60 dias</h3>
+          <p>Estratégia de catálogo dinâmico, anúncios por modelos e vídeos curtos de estoque. Otimização semanal de CPA.</p>
+        </article>
+        <article class="card case">
+          <span class="tag">Mai Cristina Studio</span>
+          <h3>Agenda cheia no mês 2</h3>
+          <p>Conteúdo visual elegante, campanhas locais e funil de WhatsApp com respostas rápidas e prova social.</p>
+        </article>
+        <article class="card case">
+          <span class="tag">PurifiQ</span>
+          <h3>ROI 4,1x em 45 dias</h3>
+          <p>Ofertas por segmento, criativos explicativos e automação de follow-up para fechar mais serviços.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <div class="container">
+      <h2 class="title">Depoimentos</h2>
+      <p class="lead">O que clientes dizem depois de colocar o plano em prática.</p>
+      <div class="grid testis">
+        <div class="card">
+          <p class="quote">“O time da PixelUp organizou nosso funil e os anúncios começaram a converter em poucos dias.”</p>
+          <p>— Maiko, M2 Multimarcas</p>
+        </div>
+        <div class="card">
+          <p class="quote">“Os criativos com azul neon chamam muita atenção e os relatórios são fáceis de entender.”</p>
+          <p>— Mai Cristina, Studio</p>
+        </div>
+        <div class="card">
+          <p class="quote">“A automação de WhatsApp salvou nosso atendimento. Mais contatos, menos tempo perdido.”</p>
+          <p>— Rafael, Representações</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container about">
+      <div>
+        <h2 class="title">Sobre a PixelUp</h2>
+        <p class="lead">Agência de Guaramirim/Jaraguá do Sul focada em crescimento real: tráfego pago, conteúdo e CRM.</p>
+        <ul>
+          <li>Metodologia própria: <strong>Mentoria PixelUp</strong> com 8 módulos.</li>
+          <li>Especialidade em <strong>lojas de veículos</strong> e negócios locais.</li>
+          <li>Estética visual marcante em <strong>azul e neon</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Informações de contato</h3>
+        <p><i class="ri-map-pin-2-line"></i> Guaramirim & região (SC)</p>
+        <p><i class="ri-mail-line"></i> <a id="email" href="mailto:pixelupmrkt@gmail.com">pixelupmrkt@gmail.com</a></p>
+        <p><i class="ri-phone-line"></i> <a href="https://wa.me/5547988968000" target="_blank" rel="noopener">(47) 98896-8000</a></p>
+        <div class="inline">
+          <button class="hamb" onclick="copyEmail()"><i class="ri-file-copy-line"></i> Copiar e-mail</button>
+          <a class="cta" href="#contato">Falar com especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2 class="title">Peça uma proposta</h2>
+      <p class="lead">Conte em poucas palavras o que você precisa. Respondemos rápido no horário comercial.</p>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form onsubmit="return sendWhats(event)">
+          <input id="nome" placeholder="Seu nome" required />
+          <input id="empresa" placeholder="Empresa (opcional)" />
+          <textarea id="mensagem" placeholder="Descreva seu projeto" required></textarea>
+          <div class="inline">
+            <button class="cta btn" type="submit">Enviar no WhatsApp</button>
+            <a class="cta" style="background:linear-gradient(90deg,#0ea5ff,#3cc8ff)" href="mailto:pixelupmrkt@gmail.com?subject=Orçamento%20PixelUp">Ou por e‑mail</a>
+          </div>
+        </form>
+        <div class="card">
+          <h3>FAQ rápido</h3>
+          <p><strong>Quanto tempo para iniciar?</strong><br/>Em geral, 3–7 dias após o briefing.</p>
+          <p><strong>Vocês criam vídeos?</strong><br/>Sim, pacotes de Reels/Shorts com roteiro, edição e thumb.</p>
+          <p><strong>Relatórios?</strong><br/>Dashboard simples com métricas que importam para venda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> PixelUp Marketing Digital & Mídia</small>
+      <div class="inline" style="gap:12px">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floatWA" href="https://wa.me/5547988968000" target="_blank" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb?.addEventListener('click',()=>menu.classList.toggle('open'));
+
+    function copyEmail(){
+      const email = 'pixelupmrkt@gmail.com';
+      navigator.clipboard.writeText(email).then(()=>{
+        alert('E-mail copiado: '+email)
+      });
+    }
+
+    function sendWhats(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const empresa = document.getElementById('empresa').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const texto = encodeURIComponent('Olá, sou ' + nome + (empresa ? ' da ' + empresa : '') + '\nQuero um orçamento para: ' + mensagem);
+      window.open('https://wa.me/5547988968000?text=' + texto,'_blank');
+      return false;
+    }
+  </script>
+</body>
+</html>
