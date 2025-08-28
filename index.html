@@ -253,4 +253,84 @@
         <h2 class="title">Sobre a PixelUp</h2>
         <p class="lead">Agência de Guaramirim/Jaraguá do Sul focada em crescimento real: tráfego pago, conteúdo e CRM.</p>
         <ul>
-          <l
+          <li>Metodologia própria: <strong>Mentoria PixelUp</strong> com 8 módulos.</li>
+          <li>Especialidade em <strong>lojas de veículos</strong> e negócios locais.</li>
+          <li>Estética visual marcante em <strong>azul e neon</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Informações de contato</h3>
+        <p><i class="ri-map-pin-2-line"></i> Guaramirim & região (SC)</p>
+        <p><i class="ri-mail-line"></i> <a id="email" href="mailto:pixelupmrkt@gmail.com">pixelupmrkt@gmail.com</a></p>
+        <p><i class="ri-phone-line"></i> <a href="https://wa.me/5547988968000" target="_blank" rel="noopener">(47) 98896-8000</a></p>
+        <div class="inline">
+          <button class="hamb" onclick="copyEmail()"><i class="ri-file-copy-line"></i> Copiar e-mail</button>
+          <a class="cta" href="#contato">Falar com especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2 class="title">Peça uma proposta</h2>
+      <p class="lead">Conte em poucas palavras o que você precisa. Respondemos rápido no horário comercial.</p>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr">
+        <form onsubmit="return sendWhats(event)">
+          <input id="nome" placeholder="Seu nome" required />
+          <input id="empresa" placeholder="Empresa (opcional)" />
+          <textarea id="mensagem" placeholder="Descreva seu projeto" required></textarea>
+          <div class="inline">
+            <button class="cta btn" type="submit">Enviar no WhatsApp</button>
+            <a class="cta" style="background:linear-gradient(90deg,#0ea5ff,#3cc8ff)" href="mailto:pixelupmrkt@gmail.com?subject=Orçamento%20PixelUp">Ou por e-mail</a>
+          </div>
+        </form>
+        <div class="card">
+          <h3>FAQ rápido</h3>
+          <p><strong>Quanto tempo para iniciar?</strong><br/>Em geral, 3–7 dias após o briefing.</p>
+          <p><strong>Vocês criam vídeos?</strong><br/>Sim, pacotes de Reels/Shorts com roteiro, edição e thumb.</p>
+          <p><strong>Relatórios?</strong><br/>Dashboard simples com métricas que importam para venda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> PixelUp Marketing Digital & Mídia</small>
+      <div class="inline" style="gap:12px">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floatWA" href="https://wa.me/5547988968000" target="_blank" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb?.addEventListener('click',()=>menu.classList.toggle('open'));
+
+    function copyEmail(){
+      const email = 'pixelupmrkt@gmail.com';
+      navigator.clipboard.writeText(email).then(()=>{
+        alert('E-mail copiado: '+email)
+      });
+    }
+
+    function sendWhats(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const empresa = document.getElementById('empresa').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const texto = encodeURIComponent('Olá, sou ' + nome + (empresa ? ' da ' + empresa : '') + '\nQuero um orçamento para: ' + mensagem);
+      window.open('https://wa.me/5547988968000?text=' + texto,'_blank');
+      return false;
+    }
+  </script>
+</body>
+</html>
