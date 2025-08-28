@@ -11,53 +11,44 @@
   <meta property="og:title" content="PixelUp • Tráfego Pago & Mídia Digital" />
   <meta property="og:description" content="Cresça com anúncios que geram resultado, conteúdo que conecta e CRM que vende." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pixelup.site" />
-  <meta property="og:image" content="assets/pixelup-logo.webp" />
+  <meta property="og:url" content="https://pixelup-site.vercel.app/" />
+  <meta property="og:image" content="assets/pixelup-logo.png" />
 
-  <!-- Icons -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230ea5ff' d='M8 8h48v10H18v38H8z'/%3E%3Cpath fill='%23fff' d='M26 26h30v30H26z'/%3E%3C/svg%3E" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/pixelup-logo.png" />
 
-  <!-- Remix Icons (leves e práticas) -->
+  <!-- Ícones -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-
-  <link rel="preload" as="image" href="assets/pixelup-logo.webp" />
 
   <style>
     :root{
-      --bg:#050811;           /* fundo quase preto */
-      --bg-soft:#0a1222;      /* fundo cartões */
-      --txt:#eaf2ff;          /* texto claro */
-      --muted:#a7b5d1;        /* texto secundário */
-      --brand:#0ea5ff;        /* azul neon */
-      --brand-2:#6ee7ff;      /* azul claro */
-      --ok:#22c55e;           /* verde */
-      --warn:#f59e0b;         /* amarelo */
-      --danger:#ef4444;       /* vermelho */
-      --radius:16px;
-      --shadow:0 10px 30px rgba(14,165,255,.2);
+      --bg:#050811; --bg-soft:#0a1222; --txt:#eaf2ff; --muted:#a7b5d1;
+      --brand:#0ea5ff; --brand-2:#6ee7ff; --ok:#22c55e; --warn:#f59e0b; --danger:#ef4444;
+      --radius:20px; --shadow:0 14px 40px rgba(14,165,255,.25);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     a{color:var(--brand);text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* Layout base */
     .container{width:min(1200px,92vw);margin-inline:auto}
     header{
       position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg,rgba(5,8,17,.9),rgba(5,8,17,.6));
-      border-bottom:1px solid rgba(110,231,255,.08);
+      background:linear-gradient(180deg,rgba(5,8,17,.92),rgba(5,8,17,.65));
+      border-bottom:1px solid rgba(110,231,255,.10)
     }
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-    .logo{width:28px;height:28px;border-radius:8px;background:radial-gradient(60% 60% at 50% 50%,var(--brand),var(--brand-2));box-shadow:0 0 30px rgba(110,231,255,.45)}
-    .logoimg{height:40px;width:auto;display:block;filter:drop-shadow(0 0 16px rgba(110,231,255,.5))}
+    .brand .logoimg{height:40px;width:auto;filter:drop-shadow(0 0 18px rgba(110,231,255,.55))}
     .menu{display:flex;gap:22px;align-items:center}
     .menu a{color:var(--txt);opacity:.85}
-    .cta{padding:12px 20px;border-radius:999px;background:linear-gradient(90deg,#33ccff,#0ea5ff);color:#001425;font-weight:800;box-shadow:0 10px 30px rgba(14,165,255,.35);border:1px solid rgba(110,231,255,.35);transition:transform .15s ease, box-shadow .15s ease}
-    .cta:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(14,165,255,.45)}
+    .cta{
+      padding:12px 20px;border-radius:999px;background:linear-gradient(90deg,#33ccff,#0ea5ff);
+      color:#001425;font-weight:800;box-shadow:0 12px 34px rgba(14,165,255,.38);border:1px solid rgba(110,231,255,.35);
+      transition:transform .15s ease, box-shadow .15s ease
+    }
+    .cta:hover{transform:translateY(-2px);box-shadow:0 18px 48px rgba(14,165,255,.48)}
 
-    /* Hero */
     .hero{position:relative;overflow:hidden}
     .hero::before{
       content:"";position:absolute;inset:-30%;
@@ -65,78 +56,82 @@
                  radial-gradient(40% 30% at 80% 0%, rgba(110,231,255,.18), transparent 70%);
       filter:blur(40px);z-index:-1
     }
-    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 0}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:96px 0}
     .kicker{color:var(--brand-2);text-transform:uppercase;font-size:.85rem;letter-spacing:.18em}
-    h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.05;margin:10px 0 14px;letter-spacing:-.02em;background:linear-gradient(180deg,#eaf2ff 0%, #6ee7ff 40%, #0ea5ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 18px 40px rgba(14,165,255,.15)}
-    .sub{color:var(--muted);font-size:1.08rem}
+    h1{
+      font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.05;margin:10px 0 14px;letter-spacing:-.02em;
+      background:linear-gradient(180deg,#eaf2ff 0%, #6ee7ff 40%, #0ea5ff 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 18px 40px rgba(14,165,255,.15)
+    }
+    .sub{color:var(--muted);font-size:1.1rem}
     .pills{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 28px}
-    .pill{border:1px solid rgba(110,231,255,.18);border-radius:999px;padding:8px 12px;color:var(--brand-2);font-size:.9rem;background:rgba(10,18,34,.7)}
-    .heroCard{background:linear-gradient(180deg,#0b1326,#0a1222);border:1px solid rgba(110,231,255,.28);border-radius:20px;padding:22px;box-shadow:0 22px 60px rgba(14,165,255,.18), inset 0 0 40px rgba(110,231,255,.06);backdrop-filter:saturate(150%) blur(6px);animation:glow 6s ease-in-out infinite alternate}
+    .pill{
+      border:1px solid rgba(110,231,255,.18);border-radius:999px;padding:8px 12px;color:var(--brand-2);
+      font-size:.85rem;background:rgba(10,18,34,.7);text-transform:uppercase;letter-spacing:.08em
+    }
+
+    .heroCard{
+      background:linear-gradient(180deg,#0b1326,#0a1222);border:1px solid rgba(110,231,255,.28);
+      border-radius:20px;padding:22px;box-shadow:0 22px 60px rgba(14,165,255,.18), inset 0 0 40px rgba(110,231,255,.06);
+      backdrop-filter:saturate(150%) blur(6px);animation:glow 6s ease-in-out infinite alternate
+    }
     .stat{display:flex;align-items:center;gap:10px}
     .stat i{font-size:22px;color:var(--ok)}
 
-    /* Seções */
-    section{padding:68px 0;border-top:1px solid rgba(110,231,255,.06)}
+    section{padding:72px 0;border-top:1px solid rgba(110,231,255,.06)}
     .title{font-size:1.9rem;margin:0 0 10px}
     .lead{color:var(--muted);margin:0 0 26px}
     .grid{display:grid;gap:18px}
-
-    /* Cartões */
-    .card{background:linear-gradient(180deg,#0a1326,#0b152a);border:1px solid rgba(110,231,255,.14);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px}
+    .card{
+      background:linear-gradient(180deg,#0a1326,#0b152a);border:1px solid rgba(110,231,255,.18);border-radius:20px;padding:20px;box-shadow:var(--shadow);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(110,231,255,.28);box-shadow:0 16px 40px rgba(14,165,255,.18)}
     .icon{width:38px;height:38px;border-radius:10px;background:rgba(14,165,255,.15);display:grid;place-items:center;margin-bottom:10px}
 
-    /* Serviços */
     .services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-
-    /* Cases */
     .cases{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .case{display:flex;flex-direction:column;gap:10px}
     .tag{font-size:.8rem;color:var(--brand-2)}
 
-    /* Depoimentos */
     .testis{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .quote{font-style:italic;color:var(--muted)}
 
-    /* Sobre */
     .about{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
 
-    /* Contato */
     form{display:grid;gap:12px}
-    input,textarea{background:#0a1326;border:1px solid rgba(110,231,255,.16);border-radius:12px;padding:12px 14px;color:var(--txt)}
+    input,textarea{background:#0a1326;border:1px solid rgba(110,231,255,.16);border-radius:12px;padding:12px 14px;color:#eaf2ff}
     textarea{min-height:120px;resize:vertical}
     .inline{display:flex;gap:10px;flex-wrap:wrap}
     .btn{cursor:pointer;border:0}
 
-    /* Rodapé */
-    footer{padding:40px 0;color:var(--muted)}
-
-    /* Fluating WhatsApp */
+    footer{padding:40px 0;color:#a7b5d1}
     .floatWA{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:28px;box-shadow:0 12px 30px rgba(0,0,0,.3);z-index:50}
 
-    /* Responsivo */
+    /* Keyframes */
+    @keyframes glow{
+      from{box-shadow:0 16px 40px rgba(14,165,255,.12), inset 0 0 20px rgba(110,231,255,.04)}
+      to{box-shadow:0 26px 70px rgba(14,165,255,.22), inset 0 0 60px rgba(110,231,255,.10)}
+    }
+
     @media (max-width: 860px){
-      .hero .wrap{grid-template-columns:1fr;gap:24px;padding:54px 0}
+      .hero .wrap{grid-template-columns:1fr;gap:24px;padding:64px 0}
       .about{grid-template-columns:1fr}
       .menu{display:none}
       .menu.open{display:flex;flex-direction:column;gap:14px;position:absolute;left:0;right:0;top:60px;background:rgba(5,8,17,.96);padding:16px;border-top:1px solid rgba(110,231,255,.08)}
       .hamb{display:inline-flex}
     }
     .hamb{display:none;align-items:center;gap:6px;background:#0b1428;border:1px solid rgba(110,231,255,.18);padding:8px 12px;border-radius:10px}
-      /* Motion & hover */
-    .card{transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
-    .card:hover{transform:translateY(-4px);border-color:rgba(110,231,255,.28);box-shadow:0 16px 40px rgba(14,165,255,.18)}
-    .pill{letter-spacing:.08em;text-transform:uppercase}
-    .logoHero{height:64px;filter:drop-shadow(0 0 26px rgba(14,165,255,.45));margin-bottom:10px}
-    @keyframes glow{from{box-shadow:0 16px 40px rgba(14,165,255,.12), inset 0 0 20px rgba(110,231,255,.04)}to{box-shadow:0 26px 70px rgba(14,165,255,.22), inset 0 0 60px rgba(110,231,255,.10)}}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">
-        <img class="logoimg" src="data:image/webp;base64,REPLACE_INLINE_WEBP" alt="PixelUp Marketing Digital" onerror="this.remove();var f=this.parentElement.querySelector('.logo-fallback'); if(f) f.style.display='inline-block';" />
-        <span class="logo logo-fallback" aria-hidden="true" style="display:none"></span>
+        <picture>
+          <source srcset="assets/pixelup-logo.webp" type="image/webp" />
+          <img class="logoimg" src="assets/pixelup-logo.png" alt="PixelUp" />
+        </picture>
         <span>PixelUp</span>
       </div>
       <nav class="menu" id="menu">
@@ -155,7 +150,10 @@
   <main id="inicio" class="hero">
     <div class="container wrap">
       <div>
-        <img class="logoHero" src="data:image/webp;base64,REPLACE_INLINE_WEBP" alt="PixelUp logo" />
+        <picture>
+          <source srcset="assets/pixelup-logo.webp" type="image/webp" />
+          <img class="logoimg" style="height:64px" src="assets/pixelup-logo.png" alt="PixelUp logo" />
+        </picture>
         <div class="kicker">Tráfego Pago • Conteúdo • CRM • Vendas</div>
         <h1>Resultados previsíveis com mídia que vende de verdade.</h1>
         <p class="sub">Nós planejamos, criamos e otimizamos todo o seu funil: anúncios, criativos, páginas e CRM — para você vender mais em menos tempo.</p>
@@ -246,97 +244,4 @@
           <p>— Mai Cristina, Studio</p>
         </div>
         <div class="card">
-          <p class="quote">“A automação de WhatsApp salvou nosso atendimento. Mais contatos, menos tempo perdido.”</p>
-          <p>— Rafael, Representações</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre">
-    <div class="container about">
-      <div>
-        <h2 class="title">Sobre a PixelUp</h2>
-        <p class="lead">Agência de Guaramirim/Jaraguá do Sul focada em crescimento real: tráfego pago, conteúdo e CRM.</p>
-        <ul>
-          <li>Metodologia própria: <strong>Mentoria PixelUp</strong> com 8 módulos.</li>
-          <li>Especialidade em <strong>lojas de veículos</strong> e negócios locais.</li>
-          <li>Estética visual marcante em <strong>azul e neon</strong>.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Informações de contato</h3>
-        <p><i class="ri-map-pin-2-line"></i> Guaramirim & região (SC)</p>
-        <p><i class="ri-mail-line"></i> <a id="email" href="mailto:pixelupmrkt@gmail.com">pixelupmrkt@gmail.com</a></p>
-        <p><i class="ri-phone-line"></i> <a href="https://wa.me/5547988968000" target="_blank" rel="noopener">(47) 98896-8000</a></p>
-        <div class="inline">
-          <button class="hamb" onclick="copyEmail()"><i class="ri-file-copy-line"></i> Copiar e-mail</button>
-          <a class="cta" href="#contato">Falar com especialista</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <div class="container">
-      <h2 class="title">Peça uma proposta</h2>
-      <p class="lead">Conte em poucas palavras o que você precisa. Respondemos rápido no horário comercial.</p>
-      <div class="grid" style="grid-template-columns:1.1fr .9fr">
-        <form onsubmit="return sendWhats(event)">
-          <input id="nome" placeholder="Seu nome" required />
-          <input id="empresa" placeholder="Empresa (opcional)" />
-          <textarea id="mensagem" placeholder="Descreva seu projeto" required></textarea>
-          <div class="inline">
-            <button class="cta btn" type="submit">Enviar no WhatsApp</button>
-            <a class="cta" style="background:linear-gradient(90deg,#0ea5ff,#3cc8ff)" href="mailto:pixelupmrkt@gmail.com?subject=Orçamento%20PixelUp">Ou por e‑mail</a>
-          </div>
-        </form>
-        <div class="card">
-          <h3>FAQ rápido</h3>
-          <p><strong>Quanto tempo para iniciar?</strong><br/>Em geral, 3–7 dias após o briefing.</p>
-          <p><strong>Vocês criam vídeos?</strong><br/>Sim, pacotes de Reels/Shorts com roteiro, edição e thumb.</p>
-          <p><strong>Relatórios?</strong><br/>Dashboard simples com métricas que importam para venda.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <small>© <span id="year"></span> PixelUp Marketing Digital & Mídia</small>
-      <div class="inline" style="gap:12px">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
-      </div>
-    </div>
-  </footer>
-
-  <a class="floatWA" href="https://wa.me/5547988968000" target="_blank" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
-
-  <script>
-    const yearEl = document.getElementById('year');
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-    const hamb = document.getElementById('hamb');
-    const menu = document.getElementById('menu');
-    hamb?.addEventListener('click',()=>menu.classList.toggle('open'));
-
-    function copyEmail(){
-      const email = 'pixelupmrkt@gmail.com';
-      navigator.clipboard.writeText(email).then(()=>{
-        alert('E-mail copiado: '+email)
-      });
-    }
-
-    function sendWhats(e){
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const empresa = document.getElementById('empresa').value.trim();
-      const mensagem = document.getElementById('mensagem').value.trim();
-      const texto = encodeURIComponent(`Olá, sou ${nome}${empresa?` da ${empresa}`:''}.\nQuero um orçamento para: ${mensagem}`);
-      window.open(`https://wa.me/5547988968000?text=${texto}`,'_blank');
-      return false;
-    }
-  </script>
-</body>
-</html>
+          <p class="quote">“A automação de WhatsApp salvou nosso atendimento. Mais contatos, menos t
